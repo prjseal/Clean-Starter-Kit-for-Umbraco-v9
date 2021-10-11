@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Clean.Core/bin/Debug/net5.0
+/Clean.Core/obj
+/Clean.Models/bin/Debug/net5.0
+/Clean.Models/obj
+/.vs/Clean

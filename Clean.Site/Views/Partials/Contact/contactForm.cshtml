@@ -1,0 +1,48 @@
+﻿@inherits UmbracoViewPage<ContactViewModel>
+
+@using Clean.Core.Models.ViewModels
+@using Clean.Core.SurfaceControllers
+
+<div id="form-outer">
+    @using (Ajax.BeginForm("SubmitForm", "Contact", new AjaxOptions()
+    {
+        UpdateTargetId = "form-result",
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        OnSuccess = "contactForm.showResult",
+        OnFailure = "contactForm.showResult"
+    }, new { id = "contact-form" }))
+    {
+
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Name")</label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                @Html.ValidationMessageFor(m => m.Name)
+
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Email")</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                @Html.ValidationMessageFor(m => m.Email)
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Message")</label>
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = "Message", rows = "6" })
+                @Html.ValidationMessageFor(m => m.Message)
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">@Umbraco.GetDictionaryValue("ContactForm.Send")</button>
+        </div>
+    }
+</div>
+<div id="form-result"></div>
