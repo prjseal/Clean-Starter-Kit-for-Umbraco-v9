@@ -58,7 +58,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Newtonsoft.Json.Linq.JToken MainContent => global::Umbraco.Cms.Web.Common.PublishedModels.ContentControls.GetMainContent(this, _publishedValueFallback);
 
 		///<summary>
-		/// Social Links: Enter the social links for the footer
+		/// Social Links: Add any social links, using font awesome icons
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

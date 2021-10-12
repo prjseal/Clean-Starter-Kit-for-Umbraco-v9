@@ -14,11 +14,20 @@
                     <ul class="list-inline text-center">
                         @foreach (var item in homePage.SocialLinks)
                         {
+                            string iconClass = "";
+                            if(!string.IsNullOrWhiteSpace(item.Icon))
+                            {
+                                var iconValues = item.Icon.ToLower().Split('-');
+                                iconClass = iconValues[1].Trim().Replace("brands", "fab")
+                                    .Replace("solid", "fas")
+                                    .Replace("regular", "far") + " fa-" + iconValues[0].Trim().Replace(" ", "-");
+                            }
+
                             <li class="list-inline-item">
                                 <a href="@item.Link.Url" target="@item.Link.Target" title="@item.Link.Name">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="@item.IconClass fa-stack-1x fa-inverse"></i>
+                                        <i class="@iconClass fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>

@@ -7,3 +7,7 @@
 /Clean.Models/bin/Debug/net5.0
 /Clean.Models/obj
 /.vs/Clean
+/Clean/bin/Debug
+/Clean/obj
+/Clean.Core/bin/Debug
+/Clean.Models/bin/Debug
