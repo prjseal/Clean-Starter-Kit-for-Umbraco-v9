@@ -18,7 +18,7 @@
 <body>
     @await Html.CachedPartialAsync("~/Views/Partials/mainNavigation.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
     @RenderBody()
-    @await Html.CachedPartialAsync("~/Views/Partials/Footer.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
+    @await Html.CachedPartialAsync("~/Views/Partials/footer.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
     <script type="text/javascript" src="/clean-assets/vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/clean-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/clean-assets/scripts/run_prettify.js?skin=sunburst"></script>
