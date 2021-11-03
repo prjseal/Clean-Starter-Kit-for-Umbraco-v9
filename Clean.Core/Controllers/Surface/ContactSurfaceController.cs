@@ -59,7 +59,7 @@ namespace Clean.Core.Controllers.Surface
                 var fromAddress = _globalSettings.Smtp.From;
 
                 var subject = string.Format("Enquiry from: {0} - {1}", model.Name, model.Email);
-                EmailMessage message = new EmailMessage(fromAddress, model.Email, subject, model.Message, false);
+                EmailMessage message = new EmailMessage(fromAddress, fromAddress, subject, model.Message, false);
                 await _emailSender.SendAsync(message, emailType: "Contact");
 
                 _logger.LogInformation("Contact Form Submitted Successfully");

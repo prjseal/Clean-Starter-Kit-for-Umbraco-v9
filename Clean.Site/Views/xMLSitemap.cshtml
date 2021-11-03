@@ -1,7 +1,6 @@
-﻿@using Umbraco.Core.Composing
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-    Context.Response.AddHeader("Content-Type", "text/xml");
+    Context.Response.Headers.Add("Content-Type", "text/xml");
     Layout = null;
 }
-@Html.CachedPartial("~/Views/Partials/xmlSitemap.cshtml", Model, 3600)
+@Html.CachedPartialAsync("~/Views/Partials/xmlSitemap.cshtml", Model, TimeSpan.FromMinutes(60))

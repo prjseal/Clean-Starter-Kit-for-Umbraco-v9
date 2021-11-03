@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactViewModel>
 
+@using Clean.Core.Controllers.Surface
 @using Clean.Core.Models.ViewModels;
+@using Umbraco.Extensions
 
-@using (Html.BeginUmbracoForm("SubmitForm", "ContactSurface", FormMethod.Post, new { @class = "text-left" }))
+@using (Html.BeginUmbracoForm<ContactSurfaceController>("SubmitForm", FormMethod.Post, new { @class = "text-left" }))
 {
     <div class="form-group">
         <label for="Name">@Umbraco.GetDictionaryValue("ContactForm.Name")</label>
