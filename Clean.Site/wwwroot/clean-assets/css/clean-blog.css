@@ -36,12 +36,12 @@ a {
 }
 
 a:focus, a:hover {
-  color: #0085A1;
+  color: #005E70;
 }
 
 blockquote {
   font-style: italic;
-  color: #868e96;
+  color: #51575D;
 }
 
 .section-heading {
@@ -63,13 +63,13 @@ blockquote {
 
 ::-moz-selection {
   color: #fff;
-  background: #0085A1;
+  background: #005E70;
   text-shadow: none;
 }
 
 ::selection {
   color: #fff;
-  background: #0085A1;
+  background: #005E70;
   text-shadow: none;
 }
 
@@ -160,13 +160,13 @@ img::-moz-selection {
     color: #212529;
   }
   #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #0085A1;
+    color: #005E70;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
     color: #212529;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #0085A1;
+    color: #005E70;
   }
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -178,7 +178,7 @@ img::-moz-selection {
 header.masthead {
   margin-bottom: 50px;
   background: no-repeat center center;
-  background-color: #868e96;
+  background-color: #51575D;
   background-attachment: scroll;
   position: relative;
   background-size: cover;
@@ -280,7 +280,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #005E70;
 }
 
 .post-preview > a > .post-title {
@@ -298,7 +298,7 @@ header.masthead .post-heading .meta a {
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
-  color: #868e96;
+  color: #51575D;
 }
 
 .post-preview > .post-meta > a {
@@ -308,7 +308,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
   text-decoration: underline;
-  color: #0085A1;
+  color: #005E70;
 }
 
 @media only screen and (min-width: 768px) {
@@ -342,7 +342,7 @@ header.masthead .post-heading .meta a {
 
 .floating-label-form-group input::-webkit-input-placeholder,
 .floating-label-form-group textarea::-webkit-input-placeholder {
-  color: #868e96;
+  color: #51575D;
   font-family: 'Lora', 'Times New Roman', serif;
 }
 
@@ -371,7 +371,7 @@ header.masthead .post-heading .meta a {
 }
 
 .floating-label-form-group-with-focus label {
-  color: #0085A1;
+  color: #005E70;
 }
 
 form .form-group:first-child .floating-label-form-group {
@@ -404,8 +404,8 @@ footer .copyright {
 }
 
 .btn-primary {
-  background-color: #0085A1;
-  border-color: #0085A1;
+  background-color: #005E70;
+  border-color: #005E70;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
@@ -465,7 +465,7 @@ h2 a:after {
     content: '\f0c1';
     font-family: 'Font Awesome 5 Free';
     margin-left: 5px;
-    color: #0085A1;
+    color: #005E70;
     font-size: 0.8em;
 }
 

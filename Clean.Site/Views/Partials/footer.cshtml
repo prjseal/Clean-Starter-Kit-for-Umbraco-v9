@@ -24,7 +24,7 @@
                             }
 
                             <li class="list-inline-item">
-                                <a href="@item.Link.Url" target="@item.Link.Target" title="@item.Link.Name">
+                                <a href="@item.Link.Url" target="@item.Link.Target" rel="@(item.Link.Type == global::Umbraco.Cms.Core.Models.LinkType.External ? "noopener" : null)" title="@item.Link.Name">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="@iconClass fa-stack-1x fa-inverse"></i>
@@ -35,7 +35,7 @@
                     </ul>
                 }
                 <p class="copyright text-muted">@Umbraco.GetDictionaryValue("Footer.CopyrightTitle") &copy; @DateTime.Now.Year @Umbraco.GetDictionaryValue("Footer.CopyrightStatement")</p>
-                <p class="copyright text-muted">Theme by <a href="https://startbootstrap.com/" target="_blank">Start Bootstrap</a>, implemented in Umbraco by Paul Seal from <a href="https://codeshare.co.uk" target="_blank">codeshare.co.uk</a></p>
+                <p class="copyright text-muted">Theme by <a href="https://startbootstrap.com/" target="_blank" rel="noopener">Start Bootstrap</a>, implemented in Umbraco by Paul Seal from <a href="https://codeshare.co.uk" target="_blank" rel="noopener">codeshare.co.uk</a></p>
             </div>
         </div>
     </div>
