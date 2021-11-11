@@ -3,22 +3,18 @@
 @{
     Layout = null;
 
-
-    SmidgeHelper.RequiresCss("~/clean-assets/vendor/bootstrap/css/bootstrap.min.css");
-    SmidgeHelper.RequiresCss("~/clean-assets/css/clean-blog.css");
-
-
-    SmidgeHelper.RequiresJs("~/clean-assets/vendor/bootstrap/js/bootstrap.min.js");
-    SmidgeHelper.RequiresJs("~/clean-assets/scripts/clean-blog.js");
+    SmidgeHelper.RequiresCss("~/clean-assets/css/clean-blog.min.css");
+    SmidgeHelper.RequiresJs("~/clean-assets/scripts/clean-blog.min.js");
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     @await Html.PartialAsync("~/Views/Partials/metaData.cshtml")
-    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap">
+    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     @await SmidgeHelper.CssHereAsync(debug: false)
 </head>
 <body>
@@ -28,6 +24,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
             integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" 
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" 
             crossorigin="anonymous"></script>
     @await SmidgeHelper.JsHereAsync(debug: false)
 </body>

@@ -16,7 +16,7 @@
 <title>
     @string.Format("{0} | {1}", Model.Name, Umbraco.GetDictionaryValue("Navigation.SiteName"))
 </title>
-<meta name="Description" content="@metaDescription" />
+<meta name="Description" content="@metaDescription ?? @Model.Name" />
 <meta name="Name" content="@metaName" />
 <meta name="Keywords" content="@string.Join(",", metaKeywords)" />
 <link rel="canonical" href="@canonicalLink" />
