@@ -10,7 +10,7 @@ dotnet new -i Umbraco.Templates
 dotnet new sln --name MySolution
 dotnet new umbraco -n MyProject --friendly-name "Admin User" --email "admin@admin.com" --password "1234567890" --connection-string "Data Source=|DataDirectory|\Umbraco.sdf;Flush Interval=1" -ce
 dotnet sln add MyProject
-dotnet add MyProject package Clean --prerelease
+dotnet add MyProject package Clean
 
 # Run
 dotnet run --project MyProject
