@@ -1,28 +1,32 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@model IPublishedContent
 @{
+
     var homePage = Model.AncestorOrSelf("home");
-}
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>@homePage.Url(mode: UrlMode.Absolute)</loc><priority>1.0</priority><lastmod>@homePage.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
-@RenderChildPages(homePage.Children)
-</urlset>
-                
-@helper RenderChildPages(IEnumerable<IPublishedContent> pages)
-{
-    if (pages.Any())
+    void RenderChildPages(IEnumerable<IPublishedContent> contentItems)
     {
-        foreach (var page in pages.Where(x => x.IsVisible()))
+        if (contentItems.Any())
         {
-            if (!(page.HasProperty("excludeFromSitemap") && (bool)page.Value("excludeFromSitemap")))
+            foreach (var content in contentItems.Where(x => x.IsVisible()))
             {
-<url><loc>@page.Url(mode:UrlMode.Absolute)</loc><lastmod>@page.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
-                if (page.Children.Any(x => x.IsVisible()))
-                {                        
-                    @RenderChildPages(page.Children)
+                if (!(content.HasProperty("excludeFromSitemap") && content.Value<bool>("excludeFromSitemap")))
+                {
+<url><loc>@content.Url(mode:UrlMode.Absolute)</loc><lastmod>@content.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
+                    if (content.Children.Any(x => x.IsVisible()))
+                    {
+                        RenderChildPages(content.Children);
+                    }
                 }
             }
         }
-    }
+    };
 }
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>@homePage.Url(mode: UrlMode.Absolute)</loc><priority>1.0</priority><lastmod>@homePage.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
+    @{
+        RenderChildPages(homePage.Children);
+    }
+</urlset>
+
