@@ -3,19 +3,21 @@
 @{
     Layout = null;
 
-    SmidgeHelper.RequiresCss("~/clean-assets/css/clean-blog.min.css");
-    SmidgeHelper.RequiresJs("~/clean-assets/scripts/clean-blog.min.js");
+    SmidgeHelper.RequiresCss("~/clean-assets/css/styles.css");
+    SmidgeHelper.RequiresJs("~/clean-assets/js/scripts.js");
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     @await Html.PartialAsync("~/Views/Partials/metaData.cshtml")
-    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap">
-    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
     @await SmidgeHelper.CssHereAsync(debug: false)
 </head>
 <body>
