@@ -22,14 +22,14 @@
                 @if (submitted)
                 {
 
-                                @if (success)
-                                {
-                                    <p>Thanks for contacting us. We will be in touch soon.</p>
-                                }
-                                else
-                                {
-                                    <p>There was an error when trying to submit the form. Please try again later.</p>
-                                }
+                    @if (success)
+                    {
+                        <p>Thanks for contacting us. We will be in touch soon.</p>
+                    }
+                    else
+                    {
+                        <p>There was an error when trying to submit the form. Please try again later.</p>
+                    }
 
                 }
                 else
@@ -40,8 +40,9 @@
 
                 @if (!submitted)
                 {
-
-                                @await Component.InvokeAsync("Contact")
+                    <div class="my-5">
+                        @await Component.InvokeAsync("Contact")
+                    </div>
 
                 }
 
