@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContactFormControls, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
+	public partial class Contact : PublishedContentModel, IContactFormControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -58,20 +58,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ErrorMessage => global::Umbraco.Cms.Web.Common.PublishedModels.ContactFormControls.GetErrorMessage(this, _publishedValueFallback);
 
 		///<summary>
+		/// Instruction Message: Enter the message to tell the user what to do
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("instructionMessage")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString InstructionMessage => global::Umbraco.Cms.Web.Common.PublishedModels.ContactFormControls.GetInstructionMessage(this, _publishedValueFallback);
+
+		///<summary>
 		/// Success Message: Enter the message to show on success
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("successMessage")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString SuccessMessage => global::Umbraco.Cms.Web.Common.PublishedModels.ContactFormControls.GetSuccessMessage(this, _publishedValueFallback);
-
-		///<summary>
-		/// Main Content: Enter the main content for the page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainContent")]
-		public virtual global::Newtonsoft.Json.Linq.JToken MainContent => global::Umbraco.Cms.Web.Common.PublishedModels.ContentControls.GetMainContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Subtitle: Enter a subtitle for this page
