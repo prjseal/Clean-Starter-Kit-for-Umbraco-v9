@@ -12,10 +12,10 @@
 <head>
     @await Html.PartialAsync("~/Views/Partials/metaData.cshtml")
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap">
+    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap">
     <!-- Core theme CSS (includes Bootstrap)-->
     @await SmidgeHelper.CssHereAsync(debug: false)
 </head>
