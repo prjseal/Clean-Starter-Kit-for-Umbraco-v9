@@ -1,6 +1,5 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Contact>
 
-@using Clean.Core.Controllers.Surface
 @using Clean.Core.Models.ViewModels
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 
@@ -25,29 +24,20 @@
                     @if (success)
                     {
                         @Model.SuccessMessage
-                        @*<p>Thanks for contacting us. We will be in touch soon.</p>*@
                     }
                     else
                     {
                         @Model.ErrorMessage
-                        @*<p>There was an error when trying to submit the form. Please try again later.</p>*@
                     }
-
                 }
                 else
                 {
                     @Model.InstructionMessage
-                }
-
-
-                @if (!submitted)
-                {
                     <div class="my-5">
                         @await Component.InvokeAsync("Contact")
                     </div>
 
                 }
-
             </div>
         </div>
     </div>

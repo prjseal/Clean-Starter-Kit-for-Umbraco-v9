@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyVersion>2.0.2</AssemblyVersion>
-    <Version>2.0.2</Version>
-    <InformationalVersion>2.0.2</InformationalVersion>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <Version>2.1.0</Version>
+    <InformationalVersion>2.1.0</InformationalVersion>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Paul Seal</Authors>
     <ContentTargetFolders>.</ContentTargetFolders>
@@ -17,6 +17,7 @@
     <RepositoryUrl>https://github.com/prjseal/clean-Starter-Kit-for-Umbraco-v9</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,11 +45,12 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.1" />
-    <PackageReference Include="Clean.Core" Version="2.0.2" />
+    <PackageReference Include="Clean.Core" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="../images/logo.png" Pack="true" PackPath="\" />
+	<None Include="../README.md" Pack="true" PackPath="\" />
   </ItemGroup>
 
 </Project>
