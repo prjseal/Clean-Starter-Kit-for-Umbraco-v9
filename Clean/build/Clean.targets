@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <CleanAssetsFilePath>$(MSBuildThisFileDirectory)..\wwwroot\clean-assets\**\*.*</CleanAssetsFilePath>
+    <CleanAssetsFilePath>$(MSBuildThisFileDirectory)..\wwwroot\**\*.*</CleanAssetsFilePath>
     <CleanViewsFilePath>$(MSBuildThisFileDirectory)..\Views\**\*.*</CleanViewsFilePath>
   </PropertyGroup>
 
@@ -12,7 +12,7 @@
     <Message Text="Copying Clean Asset files: $(CleanAssetFilesPath) - #@(CleanAssetFiles->Count()) files"  Importance="high" />
     <Copy
         SourceFiles="@(CleanAssetFiles)"
-        DestinationFiles="@(CleanAssetFiles->'$(MSBuildProjectDirectory)\wwwroot\clean-assets\%(RecursiveDir)%(Filename)%(Extension)')"
+        DestinationFiles="@(CleanAssetFiles->'$(MSBuildProjectDirectory)\wwwroot\%(RecursiveDir)%(Filename)%(Extension)')"
         SkipUnchangedFiles="true" />
   </Target>
 
