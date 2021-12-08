@@ -19,22 +19,24 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                @if (submitted)
+                @if(submitted)
                 {
 
                     @if (success)
                     {
-                        <p>Thanks for contacting us. We will be in touch soon.</p>
+                        @Model.SuccessMessage
+                        @*<p>Thanks for contacting us. We will be in touch soon.</p>*@
                     }
                     else
                     {
-                        <p>There was an error when trying to submit the form. Please try again later.</p>
+                        @Model.ErrorMessage
+                        @*<p>There was an error when trying to submit the form. Please try again later.</p>*@
                     }
 
                 }
                 else
                 {
-                    @Html.GetGridHtml(Model, "mainContent", "Clean")
+                    @Model.InstructionMessage
                 }
 
 
