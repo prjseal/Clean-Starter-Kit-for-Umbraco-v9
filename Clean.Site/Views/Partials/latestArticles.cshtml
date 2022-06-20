@@ -6,12 +6,12 @@
 @{
     ArticleList articleList = UmbracoContext.Content.GetAtRoot().DescendantsOrSelf<ArticleList>().FirstOrDefault();
     int modelId = Model.Id;
-    var isArticleListPage = modelId == articleList.Id;
+    var isArticleListPage = modelId == articleList?.Id;
     var fallbackPageSize = isArticleListPage ? 10 : 3;
 
     var pageSize = QueryStringHelper.GetIntFromQueryString(Context.Request.Query, "size", fallbackPageSize);
     var pageNumber = QueryStringHelper.GetIntFromQueryString(Context.Request.Query, "page", 1);
-    var allArticles = articleList.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate);
+    var allArticles = articleList?.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate) ?? Enumerable.Empty<Article>();
     var pageOfArticles = allArticles.Skip((pageNumber - 1) * pageSize).Take(pageSize);
     var totalItemCount = allArticles.Count();
     var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
@@ -78,7 +78,10 @@
                 }
                 else
                 {
-                    <a class="btn btn-primary float-end" href="@(articleList.Url())">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
+                    if (articleList != null && !string.IsNullOrWhiteSpace(articleList.Url()))
+                    {
+                        <a class="btn btn-primary float-end" href="@(articleList?.Url())">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
+                    }
                 }
             </div>
         </div>
