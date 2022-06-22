@@ -2,19 +2,22 @@
 
 ## Now updated to use Bootstrap 5
 
-To try it out on Windows with SqlCe, make sure you have downloaded the .Net 5 SDK and then run this block of commands in a folder somewhere.
+This works with Umbraco 9 and 10 now
+
+To try it out on Windows, Mac or Linux, make sure you have downloaded the latest .Net 6 SDK and then run this block of commands in a folder somewhere.
 
 ```ps
 # Ensure we have the latest Umbraco templates
 dotnet new -i Umbraco.Templates
 
 # Create solution/project
-dotnet new sln --name MySolution
-dotnet new umbraco -n MyProject --friendly-name "Admin User" --email "admin@admin.com" --password "1234567890" --connection-string "Data Source=|DataDirectory|\Umbraco.sdf;Flush Interval=1" -ce
-dotnet sln add MyProject
-dotnet add MyProject package Clean
+dotnet new sln --name "MySolution"
+dotnet new umbraco -n "MyProject" --friendly-name "Administrator" --email "admin@example.com" --password "1234567890" --development-database-type SQLite
+dotnet sln add "MyProject"
 
-# Run
-dotnet run --project MyProject
-# Site should be running now
+#Add starter kit
+dotnet add "MyProject" package clean
+
+dotnet run --project "MyProject"
+#Running
 ```
