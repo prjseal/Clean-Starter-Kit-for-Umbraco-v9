@@ -2,7 +2,7 @@
     <div class="usync-settings">
         <div class="usync-main-settings">
             <umb-box>
-                <umb-box-header title="Settings" description="Controls what uSync does and when">                   
+                <umb-box-header title="Settings" description="Controls what uSync does and when">
                 </umb-box-header>
                 <umb-box-content>
 
@@ -38,7 +38,7 @@
 
                     <div class="umb-permission usync-setting-value">
                         <div class="umb-permission__content">
-                            <div>Export on Save</div>
+                            <div>UI Enabled groups</div>
                             <div class="umb-permission__description">Handler groups that can be seen/used on the dashboard</div>
                         </div>
                         <div class="umb-permission__value">
@@ -46,28 +46,18 @@
                         </div>
                     </div>
 
-
-                    <div class="umb-permission usync-setting-value">
-                        <div class="umb-permission__content">
-                            <div>Fail on Missing Parent</div>
-                            <div class="umb-permission__description">Import of an item will fail if it's parent is not already in Umbraco or the current Import</div>
-                        </div>
-                        <div class="umb-permission__value">
-                            <div ng-if="vm.settings.failOnMissingParent"><i class="icon icon-check color-green"></i></div>
-                            <div ng-if="!vm.settings.failOnMissingParent"><i class="icon icon-wrong color-red"></i></div>
-                        </div>
-                    </div>
-
-                    <div class="umb-permission usync-setting-value">
-                        <div class="umb-permission__content">
-                            <div>Enable History</div>
-                            <div class="umb-permission__description">Save the result of imports/exports in the history folder</div>
-                        </div>
-                        <div class="umb-permission__value">
-                            <div ng-if="vm.settings.enableHistory"><i class="icon icon-check color-green"></i></div>
-                            <div ng-if="!vm.settings.enableHistory"><i class="icon icon-wrong color-red"></i></div>
-                        </div>
-                    </div>
+                    <!--
+            <div class="umb-permission usync-setting-value">
+                <div class="umb-permission__content">
+                    <div>Enable History</div>
+                    <div class="umb-permission__description">Save the result of imports/exports in the history folder</div>
+                </div>
+                <div class="umb-permission__value">
+                    <div ng-if="vm.settings.enableHistory"><i class="icon icon-check color-green"></i></div>
+                    <div ng-if="!vm.settings.enableHistory"><i class="icon icon-wrong color-red"></i></div>
+                </div>
+            </div>
+                -->
 
                 </umb-box-content>
             </umb-box>
@@ -87,6 +77,24 @@
                     </div>
                 </umb-box-content>
             </umb-box>
+
+            <umb-box>
+                <umb-box-header title="Application settings"></umb-box-header>
+                <umb-box-content>
+                    Setting are controlled via the appsettings.json file
+                    <a href="{{vm.docslink}}" target="_blank">see our docs</a>
+                </umb-box-content>
+                <umb-box-content>
+                    <div class="text-center">
+                        <umb-button action="vm.openAppSettingsOverlay()"
+                                    label="view appsettings"
+                                    type="button"
+                                    size="l"
+                                    button-style="action"></umb-button>
+                    </div>
+                </umb-box-content>
+            </umb-box>
+
         </div>
         <div>
             <umb-box>
@@ -104,7 +112,7 @@
                     </div>
                     <div class="umb-permission usync-setting-value">
                         <div class="umb-permission__content">
-                            <div>use guids for filenames</div>
+                            <div>Use guids for filenames</div>
                             <div class="umb-permission__description">Use the guid of an item as the filename</div>
                         </div>
                         <div class="umb-permission__value">
@@ -129,14 +137,29 @@
                     <div class="umb-permission usync-setting-value">
                         <div class="umb-permission__content">
                             <div>Disabled handlers</div>
-                            <div class="umb-permission__description">Handlers explitily disabled for this handler set</div>
+                            <div class="umb-permission__description">
+                                Handlers explitily disabled for this handler set <br />
+                                <small>(uSync.Complete will add some handlers in here automatically)</small>
+                            </div>
                         </div>
                         <div class="umb-permission__value">
                             <div ng-if="vm.handlerSet.disabledHandlers.length > 0">
-                                <span ng-repeat="handler in vm.handlerSet.disabledHandlers">{{handler}}</span>
+                                <div ng-repeat="handler in vm.handlerSet.disabledHandlers">{{handler}}</div>
                             </div>
                             <div ng-if="vm.handlerSet.disabledHandlers.length == 0">
                                 None
+                            </div>
+                        </div>
+                    </div>
+                    <div class="umb-permission usync-setting-value">
+                        <div class="umb-permission__content">
+                            <div>Fail on missing parent</div>
+                            <div class="umb-permission__description">If uSync can't find a item's parent don't import it (when off best fit is used)</div>
+                        </div>
+                        <div class="umb-permission__value">
+                            <div class="umb-permission__value">
+                                <div ng-if="vm.handlerSet.handlerDefaults.failOnMissingParent"><i class="icon icon-check color-green"></i></div>
+                                <div ng-if="!vm.handlerSet.handlerDefaults.failOnMissingParent"><i class="icon icon-wrong color-red"></i></div>
                             </div>
                         </div>
                     </div>
@@ -165,9 +188,10 @@
                                 {{handler.alias}}
                             </div>
                             <div class="umb-permission__description">
-                                Enabled for : 
+                                Enabled for :
                                 <ul ng-if="handler.actions.length > 0" class="usync-action-list">
-                                    <li ng-repeat="action in handler.actions">{{action}}</li></ul>
+                                    <li ng-repeat="action in handler.actions">{{action}}</li>
+                                </ul>
                                 <span ng-if="!handler.actions">All</span>
                             </div>
                         </div>
@@ -175,23 +199,26 @@
                 </umb-box-content>
             </umb-box>
 
+            <umb-box ng-if="vm.sets.length > 0">
+                <umb-box-header title="Sets"
+                                description="Handler sets in the config">
+                </umb-box-header>
+                <umb-box-content>
+                    <p class="color-red">Custom handler sets need to be registered in code, they may appear in this list (which is reads the config to get the list), but they won't work as Handler sets unless they are registered.</p>
 
-            <umb-box>
-                <umb-box-header title="Application settings"></umb-box-header>
-                <umb-box-content>
-                        Setting are controlled via the appsettings.json file
-                        <a href="{{vm.docslink}}" target="_blank">see our docs</a>
-                </umb-box-content>
-                <umb-box-content>
-                        <div class="text-center">
-                            <umb-button action="vm.openAppSettingsOverlay()"
-                                        label="view appsettings"
-                                        type="button"
-                                        size="l"
-                                        button-style="action"></umb-button>
+                    <div ng-repeat="(name, set) in vm.sets" class="accordion-group">
+                        <div ng-click="set.showSettings = !set.showSettings"
+                             class="accordion-heading accordion-toggle
+                             mt2 mb2 ml2">
+                            <strong>Set Name: </strong> {{name}}
                         </div>
+                        <div ng-if="set.showSettings" class="accordion-inner">
+                            <pre>{{set | json}}</pre>
+                        </div>
+                    </div>
                 </umb-box-content>
             </umb-box>
+
         </div>
     </div>
 </div>
