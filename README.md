@@ -1,8 +1,8 @@
-# Clean-Starter-Kit-for-Umbraco-v9
+# Clean Starter Kit for Umbraco 9, 10 and 11
 
 Latest Release Details:
 - Converted Groups to Tabs
-- Works with Umbraco 9 and 10
+- Works with Umbraco 9, 10 and 11
 - Updated to use Bootstrap 5
 
 To try it out on Windows, Mac or Linux, make sure you have [downloaded the latest .Net 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) and then run this block of commands in a folder somewhere.

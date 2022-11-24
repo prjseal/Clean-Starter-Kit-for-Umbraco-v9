@@ -1,0 +1,20 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+
+    "AuthorDetails": {
+        "Description": "Paul is an Umbraco Master and 5 x Umbraco MVP who loves making tutorials and small Umbraco packages.",
+        "Url": "http://codeshare.co.uk",
+        "ImageUrl": "https://codeshare.co.uk/media/mkzbdrvf/paul-seal-profile-2019-square.jpg?anchor=center&mode=crop&width=500"
+    },
+    "Category": "Themes & Starter Kits",
+    "IssueTrackerUrl": "https://github.com/prjseal/Clean-Starter-Kit-for-Umbraco-v9/issues",
+    "LicenseTypes": ["Free"],
+    "PackageType": "Package",
+    "Tags": [
+        "Clean",
+        "Starter",
+        "Kit",
+        "StarterKit"
+    ],
+    "VideoUrl": "https://www.youtube.com/watch?v=tzcSNHg77fo"    
+}
