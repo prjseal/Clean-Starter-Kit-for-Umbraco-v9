@@ -33,6 +33,12 @@
       <ProjectReference Include="..\Clean.Models\Clean.Models.csproj" />
     </ItemGroup>
 
+
+
+    <ItemGroup>
+      <Folder Include="App_Plugins\Clean\Backoffice\" />
+    </ItemGroup>
+
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
     <PropertyGroup>
         <RazorCompileOnBuild>false</RazorCompileOnBuild>

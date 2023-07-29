@@ -1,0 +1,14 @@
+﻿@inherits UmbracoViewPage<BlockListItem>
+@using Umbraco.Cms.Core.Models.Blocks
+
+@{
+    var row = (RichTextRow)Model.Content;
+    var settings = (RichTextRowSettings)Model.Settings;
+    if (settings?.Hide ?? false) { return; }
+}
+
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        @row.Content
+    </div>
+</div>
