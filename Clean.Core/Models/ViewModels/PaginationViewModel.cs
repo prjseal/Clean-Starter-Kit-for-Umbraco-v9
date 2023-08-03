@@ -13,7 +13,6 @@
             : 1;
 
         public bool ShowFirst => PageNumberStart > 3;
-        public bool ShowLast => PageNumberEnd < PageCount - 2;
 
         public int PageNumberEnd => PageNumber + PageNumbersEitherSide <= PageCount
       ? PageNumber + PageNumbersEitherSide

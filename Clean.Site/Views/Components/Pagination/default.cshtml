@@ -17,6 +17,9 @@
                 <li class="page-item">
                     <a class="page-link" href="@($"{Model.Url}?page={1}")">1</a>
                 </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">...</a>
+                </li>
             }
 
             @for (var p = Model.PageNumberStart; p <= Model.PageNumberEnd; p++)
@@ -32,12 +35,6 @@
                     {
                         @:</strong>
                     }
-                </li>
-            }
-            @if(Model.ShowLast)
-            {
-                <li class="page-item">
-                    <a class="page-link text-primary" href="@($"{Model.Url}?page={Model.PageCount}")">@Model.PageCount</a>
                 </li>
             }
             @if (Model.PageNumber < Model.PageCount)
