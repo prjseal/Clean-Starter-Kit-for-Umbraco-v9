@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoViewPage
 
 @using Clean.Core.Helpers
+@using Clean.Core.Models.ViewModels;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 
 @{
@@ -44,46 +45,11 @@
                 </div>
                 <hr>
             }
-            <!-- Pager -->
-            <div id="paging" class="clearfix">
-                @if (isArticleListPage)
-                {
-                    if (pageCount > 1)
-                    {
-                        <div class="paging-block">
-                            @if (pageNumber > 1)
-                            {
-                                <a class="btn btn-primary float-left" href="@($"{articleList.Url()}?page={pageNumber - 1}&size={pageSize}")">@Umbraco.GetDictionaryValue("Paging.Previous")</a>
-                            }
-                            else
-                            {
-                                @Html.Raw("&nbsp;")
-                            }
-                        </div>
-                        <div class="paging-block text-center">
-                            <span>@Umbraco.GetDictionaryValue("Paging.Page") @pageNumber @Umbraco.GetDictionaryValue("Paging.Of") @pageCount</span>
-                        </div>
-                        <div class="paging-block">
-                            @if (pageNumber < pageCount)
-                            {
-                                <a class="btn btn-primary float-right" href="@($"{articleList.Url()}?page={pageNumber + 1}&size={pageSize}")">@Umbraco.GetDictionaryValue("Paging.Next")</a>
-                            }
-                            else
-                            {
-                                @Html.Raw("&nbsp;")
-                            }
-                        </div>
 
-                    }
-                }
-                else
-                {
-                    if (articleList != null && !string.IsNullOrWhiteSpace(articleList.Url()))
-                    {
-                        <a class="btn btn-primary float-end" href="@(articleList?.Url())">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
-                    }
-                }
-            </div>
+            @if(isArticleListPage)
+            {
+                @await Component.InvokeAsync("Pagination", new { totalItems = totalItemCount, url = Model.Url(), pageNumber = pageNumber, pageSize = pageSize })
+            }
         </div>
     </div>
 </div>

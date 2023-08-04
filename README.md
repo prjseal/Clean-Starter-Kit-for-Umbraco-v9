@@ -1,8 +1,11 @@
-# Clean Starter Kit for Umbraco 9, 10 and 11
+# Clean Starter Kit for Umbraco 9, 10, 11 and 12
 
 Latest Release Details:
+- Converted Old Grid to Block List
+- Converted Nested Content to Block List
+- Added a Video Row with lazy iframe loading
 - Converted Groups to Tabs
-- Works with Umbraco 9, 10 and 11
+- Works with Umbraco 9, 10, 11 and 12
 - Updated to use Bootstrap 5
 
 To try it out on Windows, Mac or Linux, make sure you have [downloaded the latest .Net 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) and then run this block of commands in a folder somewhere.

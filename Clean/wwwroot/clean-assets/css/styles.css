@@ -11249,3 +11249,95 @@ header.masthead .site-heading .h1 {
 .umb-grid div > img {
     width: 100%;
 }
+
+.youtube-player {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: #000;
+    margin: 30px auto;
+    border-radius: 14px;
+    aspect-ratio: 1280 / 720;
+}
+
+    .youtube-player .play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+        width: 6.5em;
+        height: 4em;
+        background: #ff0000;
+        z-index: 1;
+        opacity: .95;
+        border-radius: .5em;
+        transition: all .2s cubic-bezier(0,0,.2,1);
+        outline: 0;
+        border: 0;
+        pointer-events: none;
+        box-shadow: 2px 3px 9px 2px #000;
+    }
+
+    .youtube-player:hover .play{
+        opacity: 0.8;
+    }
+
+    .youtube-player .play:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+        content: "";
+        border-color: transparent transparent transparent #fff;
+        border-style: solid;
+        border-width: 10px 0 10px 20px;
+    }
+
+        .youtube-player .play:hover {
+            background: url(/clean-assets/css/circle-play-red.png) no-repeat
+        }
+
+    .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: 0 0
+    }
+
+    .youtube-player img {
+        object-fit: cover;
+        display: block;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all
+    }
+
+    .video-caption {
+        margin-top: -30px;
+        margin-bottom: 30px;
+    }
+
+    .social-icon {
+        width: 2.5rem;
+        height: auto;
+    }
+
+    .social-icon:hover {
+        fill: #007189;
+    }
