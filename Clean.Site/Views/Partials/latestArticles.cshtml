@@ -46,7 +46,10 @@
                 <hr>
             }
 
-            @await Component.InvokeAsync("Pagination", new { totalItems = totalItemCount, url = Model.Url(), pageNumber = pageNumber, pageSize = pageSize })
+            @if(isArticleListPage)
+            {
+                @await Component.InvokeAsync("Pagination", new { totalItems = totalItemCount, url = Model.Url(), pageNumber = pageNumber, pageSize = pageSize })
+            }
         </div>
     </div>
 </div>

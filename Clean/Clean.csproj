@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyVersion>2.1.6</AssemblyVersion>
-    <Version>2.1.6</Version>
-    <InformationalVersion>2.1.6</InformationalVersion>
+    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <Version>3.0.1</Version>
+    <InformationalVersion>3.0.1</InformationalVersion>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Paul Seal</Authors>
     <ContentTargetFolders>.</ContentTargetFolders>
@@ -40,18 +40,26 @@
     </Content>
 
     <None Remove="Migrations\package.zip" />
+
+    <None Remove="Views\Components\Pagination\default.cshtml" />
     <EmbeddedResource Include="Migrations\package.zip" />
 
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.1.2" />
-    <PackageReference Include="Clean.Core" Version="2.1.6" />
+    <PackageReference Include="Clean.Core" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="../images/logo.png" Pack="true" PackPath="\" />
 	<None Include="../README.md" Pack="true" PackPath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Components\Pagination\default.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

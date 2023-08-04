@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyVersion>2.1.6</AssemblyVersion>
-    <Version>2.1.6</Version>
-    <InformationalVersion>2.1.6</InformationalVersion>
+    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <Version>3.0.1</Version>
+    <InformationalVersion>3.0.1</InformationalVersion>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Paul Seal</Authors>
     <ContentTargetFolders>.</ContentTargetFolders>
