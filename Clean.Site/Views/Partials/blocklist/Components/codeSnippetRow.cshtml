@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage<BlockListItem>
+@using Umbraco.Cms.Core.Models.Blocks
+
+@{
+    var row = Model.Content as CodeSnippetRow;
+    var settings = Model.Settings as CodeSnippetRowSettings;
+    if (settings?.Hide ?? false) { return; }
+
+    SmidgeHelper.RequiresCss("~/clean-assets/css/vs2015.css");
+    SmidgeHelper.RequiresJs("~/clean-assets/js/highlight.min.js");
+}
+
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <pre><code>@row.Code</code></pre>
+    </div>
+</div>

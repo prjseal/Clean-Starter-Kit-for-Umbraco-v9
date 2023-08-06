@@ -2,8 +2,8 @@
 @using Umbraco.Cms.Core.Models.Blocks
 
 @{
-    var row = (RichTextRow)Model.Content;
-    var settings = (RichTextRowSettings)Model.Settings;
+    var row = Model.Content as RichTextRow;
+    var settings = Model.Settings as RichTextRowSettings;
     if (settings?.Hide ?? false) { return; }
 }
 

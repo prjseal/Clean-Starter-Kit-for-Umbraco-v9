@@ -3,8 +3,8 @@
 @using Clean.Core.Extensions
 
 @{
-    var row = (ImageRow)Model.Content;
-    var settings = (ImageRowSettings)Model.Settings;
+    var row = Model.Content as ImageRow;
+    var settings = Model.Settings as ImageRowSettings;
     if (settings?.Hide ?? false) { return; }
 }
 

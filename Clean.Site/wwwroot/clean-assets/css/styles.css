@@ -11341,3 +11341,8 @@ header.masthead .site-heading .h1 {
     .social-icon:hover {
         fill: #007189;
     }
+
+    pre {
+        background:#1E1E1E;
+        padding: 1em;
+    }

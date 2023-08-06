@@ -3,8 +3,8 @@
 @using Umbraco.Cms.Core.Models.Blocks
 
 @{
-    var row = (VideoRow)Model.Content;
-    var settings = (VideoRowSettings)Model.Settings;
+    var row = Model.Content as VideoRow;
+    var settings = Model.Settings as VideoRowSettings;
     if (settings?.Hide ?? false) { return; }
     if (string.IsNullOrWhiteSpace(row.VideoUrl)) { return; }
 
