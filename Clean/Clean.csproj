@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyVersion>3.0.1</AssemblyVersion>
-    <Version>3.0.1</Version>
-    <InformationalVersion>3.0.1</InformationalVersion>
+    <AssemblyVersion>3.0.2</AssemblyVersion>
+    <Version>3.0.2</Version>
+    <InformationalVersion>3.0.2</InformationalVersion>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Paul Seal</Authors>
     <ContentTargetFolders>.</ContentTargetFolders>
@@ -48,7 +48,8 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.5.4" />
-    <PackageReference Include="Clean.Core" Version="3.0.1" />
+    <PackageReference Include="Clean.Core" Version="3.0.2" />
+	  <PackageReference Include="Umbraco.Community.Contentment" Version="4.4.4" />
   </ItemGroup>
 
   <ItemGroup>

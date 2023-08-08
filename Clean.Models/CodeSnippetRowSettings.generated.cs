@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Code Snippet Row Settings</summary>
 	[PublishedModel("codeSnippetRowSettings")]
-	public partial class CodeSnippetRowSettings : PublishedElementModel, IHideProperty
+	public partial class CodeSnippetRowSettings : PublishedElementModel, IHideProperty, ISpacingProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,5 +55,69 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[ImplementPropertyType("hide")]
 		public virtual bool Hide => global::Umbraco.Cms.Web.Common.PublishedModels.HideProperty.GetHide(this, _publishedValueFallback);
+
+		///<summary>
+		/// Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginBottom")]
+		public virtual string MarginBottom => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetMarginBottom(this, _publishedValueFallback);
+
+		///<summary>
+		/// Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginLeft")]
+		public virtual string MarginLeft => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetMarginLeft(this, _publishedValueFallback);
+
+		///<summary>
+		/// Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginRight")]
+		public virtual string MarginRight => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetMarginRight(this, _publishedValueFallback);
+
+		///<summary>
+		/// Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginTop")]
+		public virtual string MarginTop => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetMarginTop(this, _publishedValueFallback);
+
+		///<summary>
+		/// Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paddingBottom")]
+		public virtual string PaddingBottom => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetPaddingBottom(this, _publishedValueFallback);
+
+		///<summary>
+		/// Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paddingLeft")]
+		public virtual string PaddingLeft => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetPaddingLeft(this, _publishedValueFallback);
+
+		///<summary>
+		/// Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paddingRight")]
+		public virtual string PaddingRight => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetPaddingRight(this, _publishedValueFallback);
+
+		///<summary>
+		/// Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paddingTop")]
+		public virtual string PaddingTop => global::Umbraco.Cms.Web.Common.PublishedModels.SpacingProperties.GetPaddingTop(this, _publishedValueFallback);
 	}
 }
