@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Article</summary>
 	[PublishedModel("article")]
-	public partial class Article : PublishedContentModel, IArticleControls, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
+	public partial class Article : PublishedContentModel, IArticleControls, IContentControls, IHeaderControls, IListPageSettings, IMainImageControls, ISEocontrols, IVisibilityControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -57,12 +57,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.DateTime ArticleDate => global::Umbraco.Cms.Web.Common.PublishedModels.ArticleControls.GetArticleDate(this, _publishedValueFallback);
 
 		///<summary>
-		/// Author Name: Enter the name of the author
+		/// Author: Choose the author for this article
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("authorName")]
-		public virtual string AuthorName => global::Umbraco.Cms.Web.Common.PublishedModels.ArticleControls.GetAuthorName(this, _publishedValueFallback);
+		[ImplementPropertyType("author")]
+		public virtual string Author => global::Umbraco.Cms.Web.Common.PublishedModels.ArticleControls.GetAuthor(this, _publishedValueFallback);
+
+		///<summary>
+		/// Categories: Choose the categories for this article
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("categories")]
+		public virtual global::System.Collections.Generic.List<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> Categories => global::Umbraco.Cms.Web.Common.PublishedModels.ArticleControls.GetCategories(this, _publishedValueFallback);
 
 		///<summary>
 		/// Content Rows: Add the rows of content for the page
@@ -87,6 +95,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderControls.GetTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show Full Article On List Page: Set this to true if you want the full article to be displayed in the list page. Ideal for short diary entries.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("showFullArticleOnListPage")]
+		public virtual string ShowFullArticleOnListPage => global::Umbraco.Cms.Web.Common.PublishedModels.ListPageSettings.GetShowFullArticleOnListPage(this, _publishedValueFallback);
 
 		///<summary>
 		/// Main Image: Choose the main image for this page
@@ -121,6 +137,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MetaName => global::Umbraco.Cms.Web.Common.PublishedModels.SEocontrols.GetMetaName(this, _publishedValueFallback);
 
 		///<summary>
+		/// Hide From Top Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[ImplementPropertyType("hideFromTopNavigation")]
+		public virtual bool HideFromTopNavigation => global::Umbraco.Cms.Web.Common.PublishedModels.VisibilityControls.GetHideFromTopNavigation(this, _publishedValueFallback);
+
+		///<summary>
 		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
@@ -128,7 +151,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool HideFromXmlsitemap => global::Umbraco.Cms.Web.Common.PublishedModels.VisibilityControls.GetHideFromXmlsitemap(this, _publishedValueFallback);
 
 		///<summary>
-		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
+		/// Hide From Search: Tick this box if you want to hide this page from the navigation and from search results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[ImplementPropertyType("umbracoNaviHide")]

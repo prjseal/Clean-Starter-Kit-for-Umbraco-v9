@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyVersion>3.0.2</AssemblyVersion>
-    <Version>3.0.2</Version>
-    <InformationalVersion>3.0.2</InformationalVersion>
+    <AssemblyVersion>3.1.0</AssemblyVersion>
+    <Version>3.1.0</Version>
+    <InformationalVersion>3.1.0</InformationalVersion>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Paul Seal</Authors>
     <ContentTargetFolders>.</ContentTargetFolders>
@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.5.4" />
+	  <PackageReference Include="Our.Umbraco.Community.Contentment.Core" Version="4.4.5" />
   </ItemGroup>
 
   <ItemGroup>

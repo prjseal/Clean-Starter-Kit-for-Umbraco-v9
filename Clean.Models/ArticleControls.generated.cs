@@ -26,10 +26,15 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		global::System.DateTime ArticleDate { get; }
 
-		/// <summary>Author Name</summary>
+		/// <summary>Author</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string AuthorName { get; }
+		string Author { get; }
+
+		/// <summary>Categories</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::System.Collections.Generic.List<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> Categories { get; }
 	}
 
 	/// <summary>Article Controls</summary>
@@ -75,16 +80,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static global::System.DateTime GetArticleDate(IArticleControls that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.DateTime>(publishedValueFallback, "articleDate");
 
 		///<summary>
-		/// Author Name: Enter the name of the author
+		/// Author: Choose the author for this article
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("authorName")]
-		public virtual string AuthorName => GetAuthorName(this, _publishedValueFallback);
+		[ImplementPropertyType("author")]
+		public virtual string Author => GetAuthor(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Author Name</summary>
+		/// <summary>Static getter for Author</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetAuthorName(IArticleControls that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "authorName");
+		public static string GetAuthor(IArticleControls that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "author");
+
+		///<summary>
+		/// Categories: Choose the categories for this article
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("categories")]
+		public virtual global::System.Collections.Generic.List<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> Categories => GetCategories(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Categories</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::System.Collections.Generic.List<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> GetCategories(IArticleControls that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.List<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(publishedValueFallback, "categories");
 	}
 }

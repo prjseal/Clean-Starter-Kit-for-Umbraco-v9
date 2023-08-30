@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace Clean.Core.Models.ViewModels
@@ -15,10 +17,12 @@ namespace Clean.Core.Models.ViewModels
         public bool HasAuthor => !string.IsNullOrWhiteSpace(AuthorName);
         public DateTime? ArticleDate { get; set; }
         public bool IsArticle => ArticleDate.HasValue;
+        public IEnumerable<IPublishedContent> Categories { get; set; }
 
         public PageHeaderViewModel(string name, string title, 
             string subtitle, IPublishedContent backgroundImage,
-            string authorName = null, DateTime? articleDate = null)
+            string authorName = null, DateTime? articleDate = null, 
+            IEnumerable<IPublishedContent> categories = null)
         {
             Name = name;
             Title = title;
@@ -26,6 +30,7 @@ namespace Clean.Core.Models.ViewModels
             BackgroundImage = backgroundImage;
             AuthorName = authorName;
             ArticleDate = articleDate;
+            Categories = categories;
         }
     }
 }

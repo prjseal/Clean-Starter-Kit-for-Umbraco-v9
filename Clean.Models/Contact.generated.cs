@@ -122,6 +122,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MetaName => global::Umbraco.Cms.Web.Common.PublishedModels.SEocontrols.GetMetaName(this, _publishedValueFallback);
 
 		///<summary>
+		/// Hide From Top Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[ImplementPropertyType("hideFromTopNavigation")]
+		public virtual bool HideFromTopNavigation => global::Umbraco.Cms.Web.Common.PublishedModels.VisibilityControls.GetHideFromTopNavigation(this, _publishedValueFallback);
+
+		///<summary>
 		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
@@ -129,7 +136,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool HideFromXmlsitemap => global::Umbraco.Cms.Web.Common.PublishedModels.VisibilityControls.GetHideFromXmlsitemap(this, _publishedValueFallback);
 
 		///<summary>
-		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
+		/// Hide From Search: Tick this box if you want to hide this page from the navigation and from search results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[ImplementPropertyType("umbracoNaviHide")]

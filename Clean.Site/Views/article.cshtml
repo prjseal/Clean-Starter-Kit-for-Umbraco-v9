@@ -2,12 +2,15 @@
 
 @using Clean.Core.Models.ViewModels
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core
+@using Clean.Core.Extensions
 
 @{
     Layout = "master.cshtml";
+    var author = Model.GetAuthor(Umbraco);
 }
 
-@await Html.PartialAsync("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage, Model.AuthorName, Model.ArticleDate))
+@await Html.PartialAsync("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage, author.Name, Model.ArticleDate, Model.Categories))
 
 <article>
     <div class="container">

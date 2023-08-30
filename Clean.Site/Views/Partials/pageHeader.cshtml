@@ -15,7 +15,7 @@
                     {
                         if (Model.HasSubtitle)
                         {
-                            <h2 class="subheading">@Model.Subtitle</h2>
+                            <h2 class="subheading mb-4">@Model.Subtitle</h2>
                         }
                         <span class="meta">
                             Posted
@@ -27,6 +27,14 @@
                             }
                             @Umbraco.GetDictionaryValue("Article.On")@Html.Raw("&nbsp;")@Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
                         </span>
+                        @if (Model.Categories != null && Model.Categories.Any())
+                        {
+                            <span class="mt-4 d-block"></span>
+                            @foreach (var category in Model.Categories.Select(x => x.Name).OrderBy(y => y))
+                            {
+                                <span class="badge rounded-pill bg-light text-dark border-dark border-5">@category</span>
+                            }
+                        }
                     }
                     else
                     {

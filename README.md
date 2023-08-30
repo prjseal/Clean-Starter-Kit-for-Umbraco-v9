@@ -1,6 +1,9 @@
 # Clean Starter Kit for Umbraco 9, 10, 11 and 12
 
 Latest Release Details:
+- Added authors
+- Added categories
+- Posts can now be shown in full in the list page
 - Added an Image Carousel Row
 - Added a Code Snippet Row
 - Converted Old Grid to Block List

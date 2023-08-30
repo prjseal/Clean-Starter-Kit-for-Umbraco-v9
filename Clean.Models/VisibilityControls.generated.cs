@@ -22,11 +22,15 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 	/// <summary>Visibility Controls</summary>
 	public partial interface IVisibilityControls : IPublishedContent
 	{
+		/// <summary>Hide From Top Navigation</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		bool HideFromTopNavigation { get; }
+
 		/// <summary>Hide From XML Sitemap</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		bool HideFromXmlsitemap { get; }
 
-		/// <summary>Umbraco Navi Hide</summary>
+		/// <summary>Hide From Search</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		bool UmbracoNaviHide { get; }
 	}
@@ -63,6 +67,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Hide From Top Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		[ImplementPropertyType("hideFromTopNavigation")]
+		public virtual bool HideFromTopNavigation => GetHideFromTopNavigation(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Hide From Top Navigation</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
+		public static bool GetHideFromTopNavigation(IVisibilityControls that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "hideFromTopNavigation");
+
+		///<summary>
 		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
@@ -74,13 +89,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static bool GetHideFromXmlsitemap(IVisibilityControls that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "hideFromXMLSitemap");
 
 		///<summary>
-		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
+		/// Hide From Search: Tick this box if you want to hide this page from the navigation and from search results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[ImplementPropertyType("umbracoNaviHide")]
 		public virtual bool UmbracoNaviHide => GetUmbracoNaviHide(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Umbraco Navi Hide</summary>
+		/// <summary>Static getter for Hide From Search</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		public static bool GetUmbracoNaviHide(IVisibilityControls that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "umbracoNaviHide");
 	}

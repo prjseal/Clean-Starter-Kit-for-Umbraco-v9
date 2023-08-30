@@ -1,8 +1,10 @@
 ﻿@inherits UmbracoViewPage
 
+@using Clean.Core.Extensions
 @using Clean.Core.Helpers
-@using Clean.Core.Models.ViewModels;
+@using Clean.Core.Models.ViewModels
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core
 
 @{
     ArticleList articleList = UmbracoContext.Content.GetAtRoot().DescendantsOrSelf<ArticleList>().FirstOrDefault();
@@ -24,6 +26,9 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             @foreach (var article in pageOfArticles)
             {
+                var author = article.GetAuthor(Umbraco);
+                bool.TryParse(article.Value<string>("showFullArticleOnListPage", fallback: Fallback.ToAncestors), out var showFullArticleOnListPage);
+
                 <div class="post-preview">
                     <a href="@article.Url()">
                         <h2 class="post-title">
@@ -34,19 +39,35 @@
                             <h3 class="post-subtitle">@article.Subtitle</h3>
                         }
                     </a>
-                    <p class="post-meta">
+                    <p class="post-meta @(showFullArticleOnListPage ? "mb-0" : "")">
                         @Umbraco.GetDictionaryValue("Article.Posted")
-                        @if (!string.IsNullOrWhiteSpace(article.AuthorName))
-                        {
-                            @Umbraco.GetDictionaryValue("Article.By")@Html.Raw("&nbsp;")@article.AuthorName
-                        }
+                        @Umbraco.GetDictionaryValue("Article.By")@Html.Raw("&nbsp;")@author.Name
                         @Umbraco.GetDictionaryValue("Article.On") @article.ArticleDate.ToString("MMMM dd, yyyy")
                     </p>
+                        @if(showFullArticleOnListPage && article.Categories != null && article.Categories.Any())
+                        {
+                            <span class="mt-2 d-block"></span>
+                            @foreach(var category in article.Categories.Select(x => x.Name).OrderBy(y => y))
+                            {
+                                <span class="badge rounded-pill bg-light text-dark border-dark border-5">@category</span>
+                            }
+                            
+                        }
                 </div>
+
+                @if (showFullArticleOnListPage)
+                {
+                    <div class="row">
+                        <div class="col-12">
+                            @Html.GetBlockListHtml(article.ContentRows)
+                        </div>
+                    </div>
+                }
+
                 <hr>
             }
 
-            @if(isArticleListPage)
+            @if (isArticleListPage)
             {
                 @await Component.InvokeAsync("Pagination", new { totalItems = totalItemCount, url = Model.Url(), pageNumber = pageNumber, pageSize = pageSize })
             }
