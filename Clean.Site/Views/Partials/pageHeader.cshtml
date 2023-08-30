@@ -21,9 +21,7 @@
                             Posted
                             @if (Model.HasAuthor)
                             {
-                                @Umbraco.GetDictionaryValue("Article.By")
-
-                                @Html.Raw("&nbsp;")@Model.AuthorName
+                                @Umbraco.GetDictionaryValue("Article.By")@Html.Raw("&nbsp;")@Model.AuthorName
                             }
                             @Umbraco.GetDictionaryValue("Article.On")@Html.Raw("&nbsp;")@Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
                         </span>
