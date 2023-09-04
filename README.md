@@ -1,6 +1,7 @@
 # Clean Starter Kit for Umbraco 9, 10, 11 and 12
 
 Latest Release Details:
+- Added copy button to code snippet row
 - Added authors
 - Added categories
 - Posts can now be shown in full in the list page
