@@ -1,13 +1,12 @@
 ﻿using System;
 using Umbraco.Cms.Core.Packaging;
-using Umbraco.Cms.Infrastructure.Packaging;
 
 namespace Clean.Migrations
 {
     public class StarterKitPackageMigrationPlan : PackageMigrationPlan
     {
         public StarterKitPackageMigrationPlan()
-            : base("Clean-Starter-Kit")
+            : base("Clean")
         {
         }
 
