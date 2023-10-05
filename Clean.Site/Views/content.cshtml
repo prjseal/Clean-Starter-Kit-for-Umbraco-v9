@@ -10,12 +10,10 @@
 
 @await Html.PartialAsync("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))
 
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                @Html.GetBlockListHtml(Model.ContentRows)
-            </div>
+<article data-type="content">
+    <div class="grid container">
+        <div class="g-col-md-4 g-col-lg-6" style="grid-column-start: 4; ">
+            @Html.GetBlockListHtml(Model.ContentRows)
         </div>
     </div>
 </article>
