@@ -1,0 +1,26 @@
+.nav-link {
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: var(--#{$prefix}nav-link-hover-color);
+        /*text-decoration: if($link-hover-decoration == underline, none, null);*/
+    }
+    // Disabled state lightens text
+}
+
+.card .nav-link:hover {
+    &:hover,
+    &:focus {
+        color: $pink;
+    }
+}
+
+.card .nav-tabs .nav-link {
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: var(--#{$prefix}nav-link-hover-color);
+            /*text-decoration: if($link-hover-decoration == underline, none, null);*/
+        }
+        // Disabled state lightens text
+}

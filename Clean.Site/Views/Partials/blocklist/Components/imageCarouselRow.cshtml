@@ -55,3 +55,65 @@
         </div>
     </div>
 </div>
+
+
+
+@{
+    var count = 0;
+    var maxItems = 5;
+    int buttons = 0;
+    var guid = Guid.NewGuid().ToString();
+    var carouselId = "carousel" + guid; // create a unique id for each carousel
+}
+
+<div id="@carouselId" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+        @while (buttons < maxItems)
+        {
+            buttons += 1;
+            <button type="button" data-bs-target="#@carouselId" data-bs-slide-to="@(buttons - 1)" class="active" aria-label="Slide @buttons"></button>
+        }
+    </div>
+
+    <div class="carousel-inner">
+        @{
+            var typedMultiNodeTreePicker = Model.Content.Value<IEnumerable<IPublishedContent>>("links");
+        }
+        @if (typedMultiNodeTreePicker != null)
+        {
+            @foreach (var item in row.Images)
+            {
+                if (count == maxItems)
+                {
+                    break;
+                }
+                count++;
+                // make current item have a class of active
+                var active = count == 1 ? "active" : "";
+                <div class="carousel-item @active">
+                    <img src="@item.Url()" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block bg-dark p-3 rounded-3">
+                        <h5><a class="nav-link stretched-link" href="@item.Url()">@item.Value("pageTitle")</a></h5>
+                        <p>@item.Name</p>
+                        <p>
+                            @(count) of @(maxItems)
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#@carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-secondary rounded-1" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-secondary rounded-1" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+

@@ -1,0 +1,94 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import "_variables.scss";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+@import "_overrides.scss";
+
+// 5. Include remainder of required parts
+@import "../bootstrap/scss/maps";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/root";
+@import "../bootstrap/scss/helpers";
+
+// 6. Optionally include any other parts as needed
+@import "../bootstrap/scss/utilities";
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/images";
+@import "../bootstrap/scss/containers";
+@import "../bootstrap/scss/grid";
+@import "../bootstrap/scss/tables";
+@import "../bootstrap/scss/forms";
+@import "../bootstrap/scss/buttons";
+@import "../bootstrap/scss/transitions";
+@import "../bootstrap/scss/dropdown";
+@import "../bootstrap/scss/button-group";
+@import "../bootstrap/scss/nav";
+@import "../bootstrap/scss/navbar";
+@import "../bootstrap/scss/card";
+@import "../bootstrap/scss/accordion";
+@import "../bootstrap/scss/breadcrumb";
+@import "../bootstrap/scss/pagination";
+@import "../bootstrap/scss/badge";
+@import "../bootstrap/scss/alert";
+@import "../bootstrap/scss/progress";
+@import "../bootstrap/scss/list-group";
+@import "../bootstrap/scss/close";
+@import "../bootstrap/scss/toasts";
+@import "../bootstrap/scss/modal";
+@import "../bootstrap/scss/tooltip";
+@import "../bootstrap/scss/popover";
+@import "../bootstrap/scss/carousel";
+@import "../bootstrap/scss/spinners";
+@import "../bootstrap/scss/offcanvas";
+@import "../bootstrap/scss/placeholders";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+@import "_type";
+@import "_navbar";
+@import "_carousel";
+@import "_nav";
+@import "_utilities";
+@import "_styles";
+
+// 9. Temp
+
+// Move to Utillies
+// Dean and Aaron to look at Maps and Mixins involved so we can apply top and bottom shadows at breakpoints
+
+body {
+    min-height: 100vh;
+    height: 100%;
+}
+
+.document {
+    min-height: 100vh;
+    height: 100%;
+}
+
+.shadow-b {
+    box-shadow: 0 1rem 1rem rgb(0 0 0 / 15%);
+}
+
+.shadow {
+    /*box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;*/
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.shadow:hover {
+    box-shadow: 0 0.5rem 1.25rem rgba(0 0 0 / .35) !important;
+    transition: box-shadow 0.4s ease-in-out;
+}
