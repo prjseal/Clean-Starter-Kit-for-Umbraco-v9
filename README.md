@@ -1,6 +1,7 @@
 # Clean Starter Kit for Umbraco 9, 10, 11 and 12
 
 Latest Release Details:
+- Added post about mastodon
 - Added manifest filter to enable package telemetry
 - Added copy button to code snippet row
 - Added authors
