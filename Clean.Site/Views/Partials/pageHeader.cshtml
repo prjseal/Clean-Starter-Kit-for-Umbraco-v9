@@ -18,7 +18,7 @@
                             <h2 class="subheading mb-4">@Model.Subtitle</h2>
                         }
                         <span class="meta">
-                            Posted
+                            @Umbraco.GetDictionaryValue("Article.Posted")
                             @if (Model.HasAuthor)
                             {
                                 @Umbraco.GetDictionaryValue("Article.By")@Html.Raw("&nbsp;")@Model.AuthorName
