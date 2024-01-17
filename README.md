@@ -1,5 +1,10 @@
 # Clean Starter Kit for Umbraco 9, 10, 11 and 12
 
+
+
+| :zap:        If you're looking for Clean for Umbraco V13+, see [Clean](https://github.com/prjseal/Clean)!   |
+|-----------------------------------------|
+
 Latest Release Details:
 - Added post about mastodon
 - Added manifest filter to enable package telemetry
